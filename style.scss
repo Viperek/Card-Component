@@ -1,0 +1,110 @@
+:root {
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --slightly-transparent-whitest: hsla(0, 0%, 100%, 0.75);
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+body {
+  background-color: black;
+  color: var(--white);
+  font-size: 15px;
+  font-family: "Inter";
+  font-weight: 400;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.container {
+  background-color: var(--very-dark-blue);
+  width: 100%;
+}
+.main {
+  align-items: center;
+  background-color: var(--dark-desaturated-blue);
+  border-radius: 2%;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  margin: 50px auto;
+  width: 376px;
+
+  &__left {
+    text-align: center;
+    width: 100%;
+    &__paddings {
+      display: flex;
+      flex-direction: column;
+      padding: 50px;
+    }
+    &__up-info {
+      .main-paragraph {
+        color: var(--white);
+        font-size: 2.8rem;
+        span {
+          color: var(--soft-violet);
+        }
+      }
+    }
+    &__mid-info {
+      font-size: 1.59rem;
+      .texts {
+        color: hsla(0, 0%, 100%, 0.75);
+        height: 100%;
+      }
+    }
+    &__down-info {
+      .stats {
+        font-size: 1.5rem;
+        color: var(--white);
+      }
+      .stats-heading {
+        color: var(--slightly-transparent-white);
+      }
+    }
+  }
+  &__right {
+    width: 100%;
+    .img {
+      width: 100%;
+      @media (min-width: 376px) and (max-width: 1440px) {
+        border-top-left-radius: 2%;
+        border-top-right-radius: 2%;
+      }
+    }
+  }
+}
+@font-face {
+  font-family: "Inter";
+  src: url("https://fonts.google.com/specimen/Inter");
+}
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("https://fonts.google.com/specimen/Lexend+Deca");
+}
+@media (min-width: 1440px) {
+  .main {
+    flex-direction: row;
+    width: 1440px;
+
+    &__left {
+      width: 50%;
+      &__down-info {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: 100%;
+      }
+    }
+    &__right {
+      width: 50%;
+      .img {
+        border-bottom-right-radius: 2%;
+        border-top-right-radius: 2%;
+      }
+    }
+  }
+}
